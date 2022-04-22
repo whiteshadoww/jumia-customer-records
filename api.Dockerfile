@@ -7,7 +7,7 @@ COPY ./go.mod .
 COPY ./go.sum .
 RUN go mod download
 COPY . /go/src/jumia
-RUN go build -o ./dist/jumia
+RUN go build -o ./dist/jumia -buildvcs=false
 
 FROM alpine:3.11.3
 RUN apk add --update ca-certificates
