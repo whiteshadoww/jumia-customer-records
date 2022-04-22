@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  jumia:
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+      network: host
+    ports:
+      - "3001:8888"
+  web:
+    build:
+      context: .
+      dockerfile: react.Dockerfile
+      network: host
+    ports:
+      - "3000:80"
